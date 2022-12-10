@@ -1,0 +1,88 @@
+.container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+.side__bar {
+  background-color: #ffffff;
+  padding: 0 2rem;
+  width: 20%;
+  height: 100vh;
+}
+.side__bar img {
+  margin-top: 1rem;
+  width: 20rem;
+  border-radius: 2rem;
+}
+.side__bar li {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 2.5rem 2rem;
+}
+.side__bar i {
+  color: #6c6c6c;
+}
+a {
+  color: #6c6c6c;
+}
+/* li:hover {
+  color: #663399;
+  padding: 2.5rem 2rem;
+  border-bottom: 0.2rem solid #663399;
+} */
+a.active {
+  color: #663399;
+  padding-bottom: 1rem;
+}
+
+.main__content {
+  background-color: #f6f8fa;
+  width: 80%;
+  position: absolute;
+  padding: 2rem;
+  top: 0;
+  left: 20%;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header input {
+  height: 3rem;
+  width: 25rem;
+  border-radius: 1rem;
+  border: none;
+  margin-right: 1rem;
+}
+.header input:focus {
+  outline: none;
+}
+.header input::placeholder {
+  color: #e5e5e5;
+  padding: 0 1rem;
+}
+
+.header button {
+  background-color: green;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+/*Managing content styles  */
+
+.content {
+  position: absolute;
+  width: 76%;
+  height: 84%;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  top: 5rem;
+  left: 22%;
+}
