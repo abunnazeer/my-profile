@@ -11,7 +11,7 @@ function Experience() {
   }
   useEffect(() => {
     experienceData(Url);
-  });
+  }, []);
   return (
     <section className="skills__experience">
       <div className="about__i">

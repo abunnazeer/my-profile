@@ -11,7 +11,7 @@ function Lang() {
   }
   useEffect(() => {
     skillData(Url);
-  });
+  }, []);
   return (
     <section className="language__tools">
       <h1 className="title">Language & tools</h1>

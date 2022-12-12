@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 import styles from './config.module.css';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Config() {
   return (

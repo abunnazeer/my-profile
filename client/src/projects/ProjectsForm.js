@@ -1,6 +1,12 @@
 import { Fragment } from 'react';
 import formStyles from './projectform.module.css';
 
+function handleClick(event) {
+  event.preventDefault();
+  console.log('You click me');
+  console.log(event.target.elements);
+}
+
 function ProjectsFrom(props) {
   if (!props.show) {
     return null;
@@ -17,13 +23,13 @@ function ProjectsFrom(props) {
             <label htmlFor="image">
               Select Project <br />
               <i className="fa fa-2x fa-camera"></i>
-              <input id="image" type="file" />
+              <input id="image" type="file" name="img" />
               <br />
               <span id="imageName"></span>
             </label>
           </div>
-          <input type="url" placeholder="Github Address" />
-          <input type="url" placeholder="Demo Address" />
+          <input type="url" placeholder="Github Address" name="github" />
+          <input type="url" placeholder="Demo Address" name="demo" />
           <div className={formStyles.form__check}>
             <input type="checkbox" id="nodejs" name="nodejs" value="nodejs" />
             <label htmlFor="nodejs">Node Js</label>
@@ -43,7 +49,9 @@ function ProjectsFrom(props) {
             <label htmlFor="express">Express</label>
           </div>
           <div className={formStyles.form__submit}>
-            <button type="submit">Add</button>
+            <button type="submit" onClick={handleClick}>
+              Add
+            </button>
           </div>
         </form>
       </div>

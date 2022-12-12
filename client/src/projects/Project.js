@@ -12,7 +12,7 @@ function Project() {
   }
   useEffect(() => {
     projectData(Url);
-  });
+  }, []);
   return (
     <section className="latest__projects">
       <h1 className="title">Latest Projects</h1>

@@ -1,2 +1,7 @@
 client/node_modules
 server/node_modules
+client/build/assets
+server/public/assets/icons
+png
+.jpg
+.jpeg

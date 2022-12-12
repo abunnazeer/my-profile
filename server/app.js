@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+const morgan = require('morgan');
 
 const projectsRouter = require('./routes/projects/projects.router');
 const clientsRouter = require('./routes/clients/clients.router');
@@ -9,12 +11,20 @@ const skillsRouter = require('./routes/skills/skills.router');
 const app = express();
 app.use(
   cors({
-    origin: 'http://127.0.0.1:3000',
+    origin: 'http://127.0.0.1:3000x',
   })
 );
+
+app.use(morgan('combined'));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public'));
+});
 
 app.use('/projects', projectsRouter);
+// app.use('/projects', projectsRouter);
 app.use('/clients', clientsRouter);
 app.use('/experiences', experiencesRouter);
 app.use('/skills', skillsRouter);

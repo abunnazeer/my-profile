@@ -23,8 +23,8 @@ function Header() {
             </li>
           </ul>
         </div>
-        <Link className="custom-btn lets-talk" to="/aboutMe">
-          LET'S TALK
+        <Link className="custom-btn lets-talk" to="/settings">
+          LOGIN
         </Link>
       </div>
     </nav>
