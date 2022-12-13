@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Contact() {
   return (
@@ -20,6 +20,7 @@ function Contact() {
             placeholder="Project details"
           ></textarea>
         </div>
+        <button className="contact__btn">Send</button>
       </form>
     </section>
   );

@@ -11,7 +11,7 @@ const skillsRouter = require('./routes/skills/skills.router');
 const app = express();
 app.use(
   cors({
-    origin: 'http://127.0.0.1:3000x',
+    origin: 'http://localhost:3000',
   })
 );
 
@@ -24,7 +24,6 @@ app.get('/*', (req, res) => {
 });
 
 app.use('/projects', projectsRouter);
-// app.use('/projects', projectsRouter);
 app.use('/clients', clientsRouter);
 app.use('/experiences', experiencesRouter);
 app.use('/skills', skillsRouter);

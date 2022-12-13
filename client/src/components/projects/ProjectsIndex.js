@@ -15,7 +15,7 @@ function ProjectsIndex() {
   }
   useEffect(() => {
     projectData(Url);
-  });
+  }, []);
 
   return (
     <Fragment>

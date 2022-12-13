@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import Config from '../administration/Config';
-import styles from '../administration/config.module.css';
+import Config from '../../administration/Config';
+import styles from '../../administration/config.module.css';
 import ProjectsFrom from './ProjectsForm';
 import ProjectsIndex from './ProjectsIndex';
 import indexStyles from './projectsIndex.module.css';

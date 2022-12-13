@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ExpCard from './ExpCard';
-import experienceData from './expData';
+import ExpCard from './ExperienceCard';
+
 function Experience() {
   const Url = 'http://127.0.0.1:8000';
   const [experience, setExperience] = useState([]);
@@ -17,9 +17,9 @@ function Experience() {
       <div className="about__i">
         <h1 className="title">About Me</h1>
         <p id="ex-desc">
-          A professional front-end developer with experience in developing
-          enterprise web and mobile applications and passionate about building
-          cutting edge technology solution
+          A Software developer with experience in developing enterprise web
+          applications using | HTML | CSS | JAVASCRIPT | NODE JS | EXPRESS |
+          MongoDB.
         </p>
       </div>
 

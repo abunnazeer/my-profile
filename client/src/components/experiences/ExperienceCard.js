@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-function ExpCard(props) {
+function ExperienceCard(props) {
   return (
     <div className="working__experience">
       <div className="year__activities">{props.yex}</div>
@@ -12,4 +12,4 @@ function ExpCard(props) {
   );
 }
 
-export default ExpCard;
+export default ExperienceCard;

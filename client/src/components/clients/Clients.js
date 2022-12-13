@@ -12,7 +12,7 @@ function Client() {
   }
   useEffect(() => {
     clientData(Url);
-  });
+  }, []);
   return (
     <section className="clients__container">
       <div className="client__text">

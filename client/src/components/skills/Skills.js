@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SkillsCard from './SkillsCard';
 
-function Lang() {
+function Skills() {
   const Url = 'http://127.0.0.1:8000';
   const [skill, setSkill] = useState([]);
   async function skillData(url) {
@@ -30,4 +30,4 @@ function Lang() {
   );
 }
 
-export default Lang;
+export default Skills;

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import Config from './Config';
-import styles from './config.module.css';
+import Config from '../../administration/Config';
+import styles from '../../administration/config.module.css';
 
 function ManageSkills() {
   return (

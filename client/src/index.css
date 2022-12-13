@@ -38,6 +38,18 @@ a {
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.contact__btn {
+  margin: 1rem;
+  width: 10rem;
+  height: 4rem;
+  color: #3f3f95;
+  background-color: #fff;
+  border: none;
+  font-size: 1.4rem;
+}
+.contact__btn:hover {
+  background-color: #c5c5c5;
+}
 /* .list__item:hover {
   background-color: #3e6b3e;
   padding: 1.6rem 2rem;
@@ -278,7 +290,10 @@ body {
     font-size: 1.5rem;
     margin: auto;
   }
-
+  .year__activities {
+    width: 30%;
+    text-align: left;
+  }
   /* .job__position {
     margin-left: 3rem;
   } */
@@ -758,7 +773,10 @@ body {
     font-size: 1.5rem;
     margin: auto;
   }
-
+  .year__activities {
+    width: 30%;
+    text-align: left;
+  }
   /* .job__position {
     margin-left: 3rem;
   } */
@@ -1138,6 +1156,10 @@ body {
     width: 90%;
     font-size: 1.5rem;
     margin: auto;
+  }
+  .year__activities {
+    width: 30%;
+    text-align: left;
   }
 
   /* .job__position {
@@ -1635,7 +1657,10 @@ body {
     position: relative;
     /* left: 10rem; */
   }
-
+  .year__activities {
+    width: 30%;
+    text-align: left;
+  }
   /* .job__position {
     margin-left: 3rem;
   } */

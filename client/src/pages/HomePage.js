@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
-import Banner from '../components/Banner';
-import Experience from '../components/exp/Experience';
-import Lang from '../components/skills/Lang';
-import Project from '../projects/Project';
+import Banner from '../components/banner/Banner';
+import Experience from '../components/experiences/Experience';
+import Skills from '../components/skills/Skills';
+import Project from '../components/projects/Project';
 import Clients from '../components/clients/Clients';
-import Contact from '../components/Contact';
+import Contact from '../components/contacts/Contact';
 import Layout from '../components/layout/Layout';
 
 function HomePage() {
@@ -13,7 +13,7 @@ function HomePage() {
       <Layout />
       <Banner />
       <Experience />
-      <Lang />
+      <Skills />
       <Project />
       <Clients />
       <Contact />

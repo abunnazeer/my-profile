@@ -1,15 +1,15 @@
 import MainSite from './MainSite';
 import Config from './administration/Config';
-import Showcase from './pages/showcase';
-import Resources from './pages/resources';
+import Showcase from './pages/Showcase';
+import Resources from './pages/Resources';
 import NoPage from './pages/NoPage';
 import About from './pages/About';
 
 // configuration import
-import ManageProjects from './projects/ManageProjects';
-import ManageSkills from './administration/ManageSkills';
-import ManageExperiences from './administration/ManageExperiences';
-import ManageClients from './administration/ManageClients';
+import ManageProjects from './components/projects/ManageProjects';
+import ManageSkills from './components/skills/ManageSkills';
+import ManageExperiences from './components/experiences/ManageExperiences';
+import ManageClients from './components/clients/ManageClients';
 import { Routes, Route } from 'react-router-dom';
 
 import { Fragment } from 'react';
