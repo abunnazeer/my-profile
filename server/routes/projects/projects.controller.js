@@ -1,5 +1,4 @@
 const projects = require('../../models/projects.model');
-
 function getAllProjects(req, res) {
   res.status(200).json(projects);
 }
@@ -17,15 +16,20 @@ function getProject(req, res) {
 }
 
 function postProject(req, res) {
-  if (!req.body.name) {
+  if (!req.body.title) {
     return res.status(400).json({
       error: 'there is no value',
     });
   }
   const newProject = {
     id: projects.length,
-    name: req.body.name,
+    title: req.body.title,
     imagePath: req.body.imagePath,
+    github: req.body.github,
+    demo: req.body.demo,
+    express: req.body.express,
+    node: req.body.node,
+    react: req.body.react,
   };
   projects.push(newProject);
   res.json(newProject);

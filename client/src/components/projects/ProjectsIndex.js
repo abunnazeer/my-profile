@@ -34,7 +34,7 @@ function ProjectsIndex() {
 
         {project.map(function (item) {
           return (
-            <IndexCard name={item.name} img={item.imagePath} key={item.id} />
+            <IndexCard name={item.title} img={item.imagePath} key={item.id} />
           );
         })}
       </div>
