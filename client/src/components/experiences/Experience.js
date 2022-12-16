@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ExpCard from './ExperienceCard';
 
 function Experience() {
-  const Url = 'http://127.0.0.1:8000';
+  const Url = 'http://localhost:8000';
   const [experience, setExperience] = useState([]);
   async function experienceData(url) {
     const response = await fetch(url + '/experiences');

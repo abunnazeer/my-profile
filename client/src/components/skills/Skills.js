@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SkillsCard from './SkillsCard';
 
 function Skills() {
-  const Url = 'http://127.0.0.1:8000';
+  const Url = 'http://localhost:8000';
   const [skill, setSkill] = useState([]);
   async function skillData(url) {
     const response = await fetch(url + '/skills');

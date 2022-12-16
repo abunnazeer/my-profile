@@ -4,7 +4,7 @@ import indexStyles from './projectsIndex.module.css';
 
 import IndexCard from './IndexCard';
 
-const Url = 'http://127.0.0.1:8000';
+const Url = 'http://localhost:8000';
 
 function ProjectsIndex() {
   const [project, setProject] = useState([]);
@@ -32,10 +32,8 @@ function ProjectsIndex() {
           </div>
         </div>
 
-        {project.map(function (item) {
-          return (
-            <IndexCard name={item.title} img={item.imagePath} key={item.id} />
-          );
+        {project.map(function (item, id) {
+          return <IndexCard name={item.title} img={item.imagePath} key={id} />;
         })}
       </div>
     </Fragment>

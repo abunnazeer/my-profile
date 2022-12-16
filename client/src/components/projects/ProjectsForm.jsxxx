@@ -1,0 +1,66 @@
+import { Fragment } from 'react';
+import formStyles from './projectform.module.css';
+import axios from 'axios';
+import uploadData from './uploadData';
+
+function ProjectsFrom(props) {
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = new FormData();
+    form.append('title', document.getElementById('title').value);
+    form.append('image', document.getElementById('image').files[0]);
+    form.append('github', document.getElementById('github').value);
+    form.append('demo', document.getElementById('demo').value);
+    form.append('node', document.getElementById('node').value);
+    form.append('react', document.getElementById('react').value);
+    form.append('express', document.getElementById('express').value);
+    const title = document.getElementById('image').files[0];
+    console.log(title);
+    uploadData(title);
+  };
+
+  if (!props.show) {
+    return null;
+  }
+  return (
+    <Fragment>
+      <div className={formStyles.form__container}>
+        <button className={formStyles.form__close} onClick={props.onClose}>
+          x
+        </button>
+
+        <form className={formStyles.form__content} onSubmit={handleSubmit}>
+          <input type="text" placeholder="Project title" id="title" />
+
+          <div className={formStyles.form__image}>
+            <label htmlFor="image">
+              Select Project <br />
+              <i className="fa fa-2x fa-camera"></i>
+              <input id="image" type="file" />
+              <br />
+              <span id="imageName"></span>
+            </label>
+          </div>
+          <input type="url" placeholder="Github Address" id="github" />
+
+          <input type="url" placeholder="Demo Address" id="demo" />
+
+          <div className={formStyles.form__check}>
+            <input type="checkbox" id="node" name="tools" value="node" />
+
+            <label htmlFor="node">Node Js</label>
+            <input type="checkbox" id="react" name="tools" value="react" />
+            <label htmlFor="react"> React</label>
+            <input type="checkbox" id="express" name="tools" value="express" />
+            <label htmlFor="express">Express</label>
+          </div>
+          <div className={formStyles.form__submit}>
+            <button type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </Fragment>
+  );
+}
+
+export default ProjectsFrom;

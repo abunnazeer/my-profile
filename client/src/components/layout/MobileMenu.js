@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 function MobileMenu() {
   return (
     <footer className="mobile__bottom__menu">

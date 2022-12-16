@@ -3,7 +3,7 @@ import ClientCard from './ClientCard';
 import { Link } from 'react-router-dom';
 
 function Client() {
-  const Url = 'http://127.0.0.1:8000';
+  const Url = 'http://localhost:8000';
   const [client, setClient] = useState([]);
   async function clientData(url) {
     const response = await fetch(url + '/clients');

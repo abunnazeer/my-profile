@@ -1,54 +1,29 @@
-const projects = [
-  {
-    id: '1',
-    title: 'Core-working Space',
-    imagePath: 'assets/img/projects/core-working.jpg',
-    github: 'https://beenai.com.ng/services/',
-    demo: 'https://beenai.com.ng/services/',
-    node: 'https://beenai.com.ng/services/',
-    react: 'https://beenai.com.ng/services/',
-    express: 'https://beenai.com.ng/services/',
-  },
-  {
-    id: '2',
-    title: 'Core-working Space',
-    imagePath: 'assets/img/projects/hosting-page.png',
-    github: 'https://beenai.com.ng/services/',
-    demo: 'https://beenai.com.ng/services/',
-    node: 'https://beenai.com.ng/services/',
-    react: 'https://beenai.com.ng/services/',
-    express: 'https://beenai.com.ng/services/',
-  },
-  {
-    id: '3',
-    title: 'Core-working Space',
-    imagePath: 'assets/img/projects/ecommerece.png',
-    github: 'https://beenai.com.ng/services/',
-    demo: 'https://beenai.com.ng/services/',
-    node: 'https://beenai.com.ng/services/',
-    react: 'https://beenai.com.ng/services/',
-    express: 'https://beenai.com.ng/services/',
-  },
-  {
-    id: '4',
-    title: 'Core-working Space',
-    imagePath: 'assets/img/projects/core-working.jpg',
-    github: 'https://beenai.com.ng/services/',
-    demo: 'https://beenai.com.ng/services/',
-    node: 'https://beenai.com.ng/services/',
-    react: 'https://beenai.com.ng/services/',
-    express: 'https://beenai.com.ng/services/',
-  },
-  {
-    id: '5',
-    title: 'Core-working Space',
-    imagePath: 'assets/img/projects/core-working.jpg',
-    github: 'https://beenai.com.ng/services/',
-    demo: 'https://beenai.com.ng/services/',
-    node: 'https://beenai.com.ng/services/',
-    react: 'https://beenai.com.ng/services/',
-    express: 'https://beenai.com.ng/services/',
-  },
-];
+const mongoose = require('mongoose');
 
-module.exports = projects;
+const projectSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  imagePath: {
+    type: String,
+    required: true,
+  },
+  github: {
+    type: String,
+  },
+  demo: {
+    type: String,
+  },
+  node: {
+    type: String,
+  },
+  react: {
+    type: String,
+  },
+  express: {
+    type: String,
+  },
+});
+const Project = mongoose.model('Project', projectSchema);
+module.exports = Project;

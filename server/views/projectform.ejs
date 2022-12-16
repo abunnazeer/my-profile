@@ -1,0 +1,134 @@
+<style>
+  .form__container {
+    position: absolute;
+    top: 10px;
+    z-index: 2;
+    background: #fff;
+    left: 15rem;
+    width: 70%;
+    margin: auto;
+    border: 0.2rem solid grey;
+    padding: 1rem;
+  }
+
+  .form__close {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 2rem;
+    font-size: 1.5rem;
+    height: 2rem;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .form__close:hover {
+    background-color: #f92525c7;
+  }
+
+  .form__content input {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .form__content input[type='text' i],
+  input[type='url' i] {
+    height: 3.5rem;
+    background-color: #e8e8e8;
+    border: 0.1rem solid #c8c6c6;
+    border-radius: 0.5rem;
+  }
+
+  .form__content input:focus {
+    outline: none;
+  }
+  .form__content input::placeholder {
+    color: #2d2d2d;
+  }
+
+  .form__image {
+    background-color: #e8e8e8;
+    border: 0.1rem solid #c8c6c6;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 2rem;
+  }
+  .form__image input {
+    display: none;
+  }
+  .form__image label {
+    cursor: pointer;
+  }
+
+  .form__image i {
+    font-size: 5rem;
+    color: #8a8a8a;
+  }
+
+  .form__check {
+    border: 0.1rem solid #c8c6c6;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  .form__check input {
+    display: block;
+    height: 1.5rem;
+  }
+  .form__check label {
+    display: block;
+    margin-top: -3rem;
+    font-size: 1.4rem;
+  }
+  .form__submit {
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .form__submit button {
+    width: 150px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+</style>
+
+<div class="form__container">
+  <button class="form__close">x</button>
+
+  <form class="form__content">
+    <input type="text" placeholder="Project title" name="title" />
+
+    <div class="form__image">
+      <label htmlFor="image">
+        Select Project <br />
+        <i class="fa fa-2x fa-camera"></i>
+        <input id="image" type="file" />
+
+        <br />
+        <span id="imageName"></span>
+      </label>
+    </div>
+    <input type="url" placeholder="Github Address" />
+    <input type="url" placeholder="Demo Address" />
+
+    <div class="form__check">
+      <input type="checkbox" id="node" name="tools" value="node" />
+
+      <label for="node">Node Js</label>
+      <input type="checkbox" id="react" name="tools" value="react" />
+      <label for="react"> React</label>
+      <input type="checkbox" id="express" name="tools" value="express" />
+      <label for="express">Express</label>
+    </div>
+    <div class="form__submit">
+      <button type="submit" id="submit">Add</button>
+    </div>
+  </form>
+</div>
+
+<script src="../public/form.js">

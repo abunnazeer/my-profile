@@ -1,27 +1,37 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
 import formStyles from './projectform.module.css';
-import axios from 'axios';
+//import axios from 'axios';
 
 function ProjectsFrom(props) {
   const {
     register,
     handleSubmit,
-    reset,
-    formState,
+    // reset,
+    // formState,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async data => {
-    const res = await fetch('http://localhost:8000/projects', {
+    const formdata = {
+      title: data.title,
+      github: data.github,
+      demo: data.demo,
+      imagePath: 'product' + '-' + data.imagePath[0].name,
+      node: data.node,
+      react: data.react,
+      express: data.express,
+    };
+
+    await fetch('http://localhost:8000/projects', {
       method: 'POST',
-      body: JSON.stringify(data),
+
+      body: JSON.stringify(formdata),
       headers: {
         'Content-Type': 'application/json',
-        // 'Content-type': 'multipart/form-data',
       },
     });
-    console.log(data.imagePath[0].name);
+    console.log(formdata);
   };
 
   if (!props.show) {

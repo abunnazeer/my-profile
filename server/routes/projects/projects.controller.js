@@ -1,11 +1,30 @@
-const projects = require('../../models/projects.model');
-function getAllProjects(req, res) {
-  res.status(200).json(projects);
+const multer = require('multer');
+const Projects = require('../../models/projects.model');
+
+/// Image upload functinalities
+const Storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/assets/');
+  },
+  // destination: 'public/assets/uploads',
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '__' + file.originalname);
+  },
+});
+
+const upload = multer({
+  storage: Storage,
+});
+
+const uploadImage = upload.single('imagePath');
+async function getAllProjects(req, res) {
+  const allProjects = await Projects.find();
+  res.status(200).json(allProjects);
 }
 
 function getProject(req, res) {
   const id = Number(req.params.id);
-  const project = projects[id];
+  const project = Projects[id];
   if (project) {
     res.status(200).json(project);
   } else {
@@ -15,27 +34,33 @@ function getProject(req, res) {
   }
 }
 
-function postProject(req, res) {
-  if (!req.body.title) {
-    return res.status(400).json({
-      error: 'there is no value',
+async function postProject(req, res) {
+  try {
+    const newProject = await Projects.create({
+      title: req.body.title,
+      imagePath: req.body.imagePath,
+      github: req.body.github,
+      demo: req.body.demo,
+      node: req.body.node,
+      react: req.body.react,
+      express: req.body.express,
+    });
+    res.status(201).json({
+      status: 'success',
+      data: {
+        project: newProject,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
     });
   }
-  const newProject = {
-    id: projects.length,
-    title: req.body.title,
-    imagePath: req.body.imagePath,
-    github: req.body.github,
-    demo: req.body.demo,
-    express: req.body.express,
-    node: req.body.node,
-    react: req.body.react,
-  };
-  projects.push(newProject);
-  res.json(newProject);
 }
 module.exports = {
   getAllProjects,
   getProject,
   postProject,
+  uploadImage,
 };

@@ -15,14 +15,19 @@ app.use(
   })
 );
 
-app.use(morgan('combined'));
+//app.use(morgan('combined'));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public'));
 });
 
+app.get('/add-project', (req, res) => {
+  res.render('projectform');
+});
 app.use('/projects', projectsRouter);
 app.use('/clients', clientsRouter);
 app.use('/experiences', experiencesRouter);
