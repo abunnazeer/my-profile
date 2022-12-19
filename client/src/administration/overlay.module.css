@@ -1,0 +1,8 @@
+.form__overlay {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  background-color: #0000005a;
+  z-index: 1;
+  height: 100vh;
+}

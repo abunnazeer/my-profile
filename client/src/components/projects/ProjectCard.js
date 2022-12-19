@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Card(props) {
   return (
     <div className="project__box">
-      <a href="/">
+      <Link to="/showcase/1">
         <img src={props.img} alt="a" />
         <div className="overlay">
           <h2 className="project__title">{props.name}</h2>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

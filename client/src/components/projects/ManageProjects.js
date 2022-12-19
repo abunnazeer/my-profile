@@ -3,8 +3,8 @@ import Config from '../../administration/Config';
 import styles from '../../administration/config.module.css';
 import ProjectsFrom from './ProjectsForm';
 import ProjectsIndex from './ProjectsIndex';
-import indexStyles from './projectsIndex.module.css';
-import Overlay from './overlay';
+import indexStyles from '../../administration/index.module.css';
+import Overlay from '../../administration/overlay';
 
 function ManageProjects() {
   const [show, setShow] = useState(false);

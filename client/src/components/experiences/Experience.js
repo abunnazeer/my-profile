@@ -25,13 +25,13 @@ function Experience() {
 
       <div className="working-experience-box">
         <h1 className="title">Working Experience</h1>
-        {experience.map(items => {
+        {experience.map((items, id) => {
           return (
             <ExpCard
-              key={items.id}
-              yex={items.expDate}
-              jtitle={items.expTitle}
-              comp={items.expCompany}
+              key={id}
+              duration={items.duration}
+              jobTitle={items.jobTitle}
+              companyName={items.companyName}
             />
           );
         })}

@@ -1,41 +1,18 @@
-const experiences = [
-  {
-    id: '1',
-    expDate: 'Jan, 2020 to Present',
-    expTitle: 'Web Developer-Team Lead',
-    expCompany: 'Inception Technologies',
-  },
+const mongoose = require('mongoose');
 
-  {
-    id: '2',
-    expDate: 'July 2020',
-    expTitle: 'Core Founder ',
-    expCompany: 'Arewa Stylists Studio',
+const experienceSchema = new mongoose.Schema({
+  duration: {
+    type: String,
+    required: true,
   },
-  {
-    id: '3',
-    expDate: 'Jan, 2022',
-    expTitle: 'Core Founder ',
-    expCompany: 'VS cloud technologies',
+  jobTitle: {
+    type: String,
+    required: true,
   },
-  {
-    id: '4',
-    expDate: 'Jan, 2020 to Present',
-    expTitle: 'Front End Developer',
-    expCompany: 'Cerebro System limited',
+  companyName: {
+    type: String,
+    required: true,
   },
-
-  {
-    id: '5',
-    expDate: 'Mar 2018 to Oct. 2022',
-    expTitle: 'Junior Flutter Developer',
-    expCompany: 'Mobile Robotic Technology ltd',
-  },
-  {
-    id: '6',
-    expDate: 'Jul 2014 to Jan. 2016',
-    expTitle: 'Front End Developer',
-    expCompany: 'Dwil Computers',
-  },
-];
-module.exports = experiences;
+});
+const Experience = mongoose.model('Experience', experienceSchema);
+module.exports = Experience;

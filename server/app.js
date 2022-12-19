@@ -25,9 +25,6 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public'));
 });
 
-app.get('/add-project', (req, res) => {
-  res.render('projectform');
-});
 app.use('/projects', projectsRouter);
 app.use('/clients', clientsRouter);
 app.use('/experiences', experiencesRouter);

@@ -1,22 +1,22 @@
-const multer = require('multer');
+//const multer = require('multer');
 const Projects = require('../../models/projects.model');
 
 /// Image upload functinalities
-const Storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'public/assets/');
-  },
-  // destination: 'public/assets/uploads',
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '__' + file.originalname);
-  },
-});
+// const Storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'public/assets/');
+//   },
+//   // destination: 'public/assets/uploads',
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + '__' + file.originalname);
+//   },
+// });
 
-const upload = multer({
-  storage: Storage,
-});
+// const upload = multer({
+//   storage: Storage,
+// });
 
-const uploadImage = upload.single('imagePath');
+// const uploadImage = upload.single('imagePath');
 async function getAllProjects(req, res) {
   const allProjects = await Projects.find();
   res.status(200).json(allProjects);
@@ -38,7 +38,7 @@ async function postProject(req, res) {
   try {
     const newProject = await Projects.create({
       title: req.body.title,
-      imagePath: req.body.imagePath,
+      imagepath: req.body.imagepath,
       github: req.body.github,
       demo: req.body.demo,
       node: req.body.node,
@@ -62,5 +62,4 @@ module.exports = {
   getAllProjects,
   getProject,
   postProject,
-  uploadImage,
 };

@@ -1,28 +1,20 @@
-const clients = [
-  {
-    id: '1',
-    imagePath: 'assets/img/clients/walwanne-logo.png',
-  },
-  {
-    id: '2',
-    imagePath: 'assets/img/clients/kanem.jpg',
-  },
-  {
-    id: '3',
-    imagePath: 'assets/img/clients/Inception-logo.png',
-  },
-  {
-    id: '4',
-    imagePath: 'assets/img/clients/vscloud.png',
-  },
-  {
-    id: '5',
-    imagePath: 'assets/img/clients/multiaid.png',
-  },
-  {
-    id: '6',
-    imagePath: 'assets/img/clients/ruwasalogo.png',
-  },
-];
+const mongoose = require('mongoose');
 
-module.exports = clients;
+const clientSchema = new mongoose.Schema({
+  logo: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  clientName: {
+    type: String,
+    required: true,
+  },
+  clientWebUrl: {
+    type: String,
+    required: true,
+  },
+});
+const Client = mongoose.model('Client', clientSchema);
+
+module.exports = Client;

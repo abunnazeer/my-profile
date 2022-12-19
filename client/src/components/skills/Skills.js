@@ -16,13 +16,9 @@ function Skills() {
     <section className="language__tools">
       <h1 className="title">Language & tools</h1>
       <div className="skills">
-        {skill.map(items => {
+        {skill.map((items, id) => {
           return (
-            <SkillsCard
-              icons={items.icon}
-              skills={items.skill}
-              key={items.id}
-            />
+            <SkillsCard icons={items.icon} skills={items.skill} key={id} />
           );
         })}
       </div>

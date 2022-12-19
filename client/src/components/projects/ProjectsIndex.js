@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import React, { useEffect, useState } from 'react';
-import indexStyles from './projectsIndex.module.css';
+import indexStyles from '../../administration/index.module.css';
 
-import IndexCard from './IndexCard';
+import IndexCard from '../../administration/IndexCard';
 
 const Url = 'http://localhost:8000';
 
@@ -33,7 +33,7 @@ function ProjectsIndex() {
         </div>
 
         {project.map(function (item, id) {
-          return <IndexCard name={item.title} img={item.imagePath} key={id} />;
+          return <IndexCard name={item.title} img={item.imagepath} key={id} />;
         })}
       </div>
     </Fragment>

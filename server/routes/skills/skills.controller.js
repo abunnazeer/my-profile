@@ -1,12 +1,13 @@
-const skills = require('../../models/skills.model');
+const Skills = require('../../models/skills.model');
 
-function getAllSkills(req, res) {
-  res.status(200).json(skills);
+async function getAllSkills(req, res) {
+  const allSkills = await Skills.find();
+  res.status(200).json(allSkills);
 }
 
 function getSkill(req, res) {
   const id = Number(req.params.id);
-  const skill = skills[id];
+  const skill = Skills[id];
   if (skill) {
     res.status(200).json(skill);
   } else {
@@ -15,20 +16,24 @@ function getSkill(req, res) {
     });
   }
 }
-function postSkill(req, res) {
-  if (!req.body.icon) {
-    return res.status(404).json({
-      error: 'not found',
+async function postSkill(req, res) {
+  try {
+    const newSkill = await Skills.create({
+      skill: req.body.skill,
+      icon: req.body.icon,
+    });
+    res.status(201).json({
+      status: 'success',
+      data: {
+        skill: newSkill,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
     });
   }
-  const newSkill = {
-    id: skills.length,
-    icon: req.body.icon,
-    skill: req.body.skill,
-  };
-
-  skills.push(newSkill);
-  res.json(newSkill);
 }
 
 module.exports = {

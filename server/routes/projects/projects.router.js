@@ -4,11 +4,10 @@ const {
   getAllProjects,
   getProject,
   postProject,
-  uploadImage,
 } = require('./projects.controller');
 const projectsRouter = express();
 
-projectsRouter.route('/').get(getAllProjects).post(uploadImage, postProject);
+projectsRouter.route('/').get(getAllProjects).post(postProject);
 projectsRouter.get('/:id', getProject);
 
 module.exports = projectsRouter;

@@ -1,12 +1,13 @@
-const clients = require('../../models/clients.model');
+const Clients = require('../../models/clients.model');
 
-function getAllClients(req, res) {
-  res.status(200).json(clients);
+async function getAllClients(req, res) {
+  const allClients = await Clients.find();
+  res.status(200).json(allClients);
 }
 
 function getClient(req, res) {
   const id = Number(req.params.id);
-  const client = clients[id];
+  const client = Clients[id];
   if (client) {
     res.status(200).json(client);
   } else {
@@ -16,18 +17,25 @@ function getClient(req, res) {
   }
 }
 
-function postClient(req, res) {
-  if (!req.body.imagePath) {
-    return res.status(404).json({
-      error: 'you cannot submit without value',
+async function postClient(req, res) {
+  try {
+    const newClient = await Clients.create({
+      logo: req.body.logo,
+      clientName: req.body.clientName,
+      clientWebUrl: req.body.clientWebUrl,
+    });
+    res.status(201).json({
+      status: 'success',
+      data: {
+        client: newClient,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
     });
   }
-  const newClient = {
-    id: clients.length,
-    imagePath: req.body.imagePath,
-  };
-  clients.push(newClient);
-  res.json(newClient);
 }
 
 module.exports = {

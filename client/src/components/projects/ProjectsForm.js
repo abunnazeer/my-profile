@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
-import formStyles from './projectform.module.css';
+import formStyles from '../../administration/form.module.css';
 //import axios from 'axios';
 
 function ProjectsFrom(props) {
@@ -8,7 +8,7 @@ function ProjectsFrom(props) {
     register,
     handleSubmit,
     // reset,
-    // formState,
+    //   formState,
     formState: { errors },
   } = useForm();
 
@@ -17,7 +17,7 @@ function ProjectsFrom(props) {
       title: data.title,
       github: data.github,
       demo: data.demo,
-      imagePath: 'product' + '-' + data.imagePath[0].name,
+      imagepath: data.imagepath,
       node: data.node,
       react: data.react,
       express: data.express,
@@ -54,16 +54,13 @@ function ProjectsFrom(props) {
             {...register('title')}
           />
           {errors.title && <span>This field is required</span>}
-          <div className={formStyles.form__image}>
-            <label htmlFor="image">
-              Select Project <br />
-              <i className="fa fa-2x fa-camera"></i>
-              <input id="image" type="file" {...register('imagePath')} />
-              {errors.imagePath && <span>This field is required</span>}
-              <br />
-              <span id="imageName"></span>
-            </label>
-          </div>
+
+          <input
+            type="url"
+            placeholder="Image Url"
+            {...register('imagepath')}
+          />
+
           <input
             type="url"
             placeholder="Github Address"

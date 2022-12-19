@@ -1,9 +1,10 @@
 import MainSite from './MainSite';
 import Config from './administration/Config';
 import Showcase from './pages/Showcase';
+import ProjectDetails from './pages/ShowcaseDetails';
 import Resources from './pages/Resources';
 import NoPage from './pages/NoPage';
-import About from './pages/About';
+import About from './pages/about/About';
 
 // configuration import
 import ManageProjects from './components/projects/ManageProjects';
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainSite />} />
         <Route path="/showcase" element={<Showcase />} />
+        <Route path="/showcase/:Id" element={<ProjectDetails />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/about-me" element={<About />} />
         <Route path="/*" element={<NoPage />} />

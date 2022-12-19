@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import ClientCard from './ClientCard';
 import { Link } from 'react-router-dom';
 
@@ -23,8 +23,18 @@ function Client() {
         </p>
       </div>
       <div className="clients__box">
-        {client.map(items => {
-          return <ClientCard img={items.imagePath} key={items.id} />;
+        {client.map((items, id) => {
+          return (
+            <Fragment>
+              <a
+                href={items.clientWebUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ClientCard img={items.logo} key={id + 1} />;
+              </a>
+            </Fragment>
+          );
         })}
       </div>
       <div>

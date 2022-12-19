@@ -18,7 +18,7 @@ function Project() {
       <h1 className="title">Latest Projects</h1>
       <div className="project__container">
         {project.map(function (item, id) {
-          return <Card img={item.imagePath} name={item.title} key={id} />;
+          return <Card img={item.imagepath} name={item.title} key={id} />;
         })}
       </div>
       <Link to="/showcase" className="custom__btn">

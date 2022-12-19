@@ -1,12 +1,13 @@
-const experiences = require('../../models/experiences.model');
+const Experiences = require('../../models/experiences.model');
 
-function getAllExperiences(req, res) {
-  res.status(200).json(experiences);
+async function getAllExperiences(req, res) {
+  const allExperiences = await Experiences.find();
+  res.status(200).json(allExperiences);
 }
 
 function getExperience(req, res) {
   const id = Number(req.params.id);
-  const experience = experiences[id];
+  const experience = Experiences[id];
   if (experience) {
     res.status(200).json(experience);
   } else {
@@ -16,20 +17,25 @@ function getExperience(req, res) {
   }
 }
 
-function postExperience(req, res) {
-  if (!req.body.expTitle) {
-    return res.status(404).json({
-      error: 'you cannot submit blank data',
+async function postExperience(req, res) {
+  try {
+    const newExperience = await Experiences.create({
+      duration: req.body.duration,
+      jobTitle: req.body.jobTitle,
+      companyName: req.body.companyName,
+    });
+    res.status(201).json({
+      status: 'success',
+      data: {
+        experience: newExperience,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err,
     });
   }
-  const newExperience = {
-    id: experiences.length,
-    expDate: req.body.expDate,
-    expTitle: req.body.expTitle,
-    expCompany: req.body.expCompany,
-  };
-  experiences.push(newExperience);
-  res.json(newExperience);
 }
 
 module.exports = {
