@@ -8,6 +8,7 @@ const experienceSchema = new mongoose.Schema({
   jobTitle: {
     type: String,
     required: true,
+    unique: true,
   },
   companyName: {
     type: String,

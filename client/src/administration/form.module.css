@@ -41,8 +41,24 @@ input[type='url' i] {
   border-radius: 0.5rem;
 }
 
-.form__content input:focus {
-  outline: none;
+.error input {
+  background-color: #ffb0b0 !important;
+  outline: #ff4000;
+  outline-style: solid;
+  outline-width: 0.1rem;
+}
+
+.error input:focus {
+  background-color: #ffb0b0;
+  outline: #ff4000;
+  outline-style: solid;
+  outline-width: 0.1rem;
+}
+.valid input:focus {
+  outline: #02a734;
+  outline-style: solid;
+  outline-width: 0.1rem;
+  background-color: white;
 }
 .form__content input::placeholder {
   color: #2d2d2d;

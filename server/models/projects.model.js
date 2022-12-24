@@ -12,9 +12,11 @@ const projectSchema = new mongoose.Schema({
   },
   github: {
     type: String,
+    unique: true,
   },
   demo: {
     type: String,
+    unique: true,
   },
   node: {
     type: String,
@@ -23,6 +25,9 @@ const projectSchema = new mongoose.Schema({
     type: String,
   },
   express: {
+    type: String,
+  },
+  slug: {
     type: String,
   },
 });

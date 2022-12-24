@@ -20,7 +20,7 @@ function ManageProjects() {
         >
           <i className="fa-solid fa-plus"></i>Add
         </button>
-        <ProjectsFrom onClose={() => setShow(false)} show={show} />
+        <ProjectsFrom onCloseForm={() => setShow(false)} show={show} />
         <ProjectsIndex />
       </section>
     </Fragment>

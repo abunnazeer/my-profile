@@ -31,7 +31,7 @@ function Client() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ClientCard img={items.logo} key={id + 1} />;
+                <ClientCard img={items.logo} key={id} />
               </a>
             </Fragment>
           );
