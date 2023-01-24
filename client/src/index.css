@@ -657,7 +657,7 @@ body {
     border-bottom: var(--green-color) 0.2rem solid;
   }
 
-  .header {
+  .display__flex {
     display: flex;
     margin: auto;
     width: 90%;

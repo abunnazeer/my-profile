@@ -1,0 +1,51 @@
+@import '../sass/variable';
+
+.about__me {
+  background-color: $green-color-light-500;
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.intro {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  font-style: italic;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.experience {
+  position: relative;
+  left: 20rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 4rem;
+  border-bottom: 0.1rem $black-color solid;
+  padding: 1.5rem 0;
+  width: 50%;
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.duration {
+  width: 30%;
+  text-align: left;
+}
+
+.position {
+  text-align: left;
+  h3 {
+    margin-bottom: 0.6rem;
+  }
+  p {
+    color: $black-color-100;
+  }
+}

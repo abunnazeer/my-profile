@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import SkillsCard from './SkillsCard';
+import styles from './skills.module.scss';
 
-function Skills() {
+const Skills = () => {
   const Url = 'http://localhost:8000';
   const [skill, setSkill] = useState([]);
-  async function skillData(url) {
+  const skillData = async url => {
     const response = await fetch(url + '/skills');
     const data = await response.json();
     setSkill(data);
-  }
+  };
   useEffect(() => {
     skillData(Url);
   }, []);
   return (
-    <section className="language__tools">
-      <h1 className="title">Language & tools</h1>
-      <div className="skills">
+    <section className={styles.skills} id="skills">
+      <h1 className={styles.title}>Language & tools</h1>
+      <div className={styles.display__grid}>
         {skill.map((items, id) => {
           return (
             <SkillsCard icons={items.icon} skills={items.skill} key={id} />
@@ -24,6 +25,6 @@ function Skills() {
       </div>
     </section>
   );
-}
+};
 
 export default Skills;

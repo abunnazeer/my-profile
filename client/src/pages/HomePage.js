@@ -1,22 +1,31 @@
 import { Fragment } from 'react';
-import Banner from '../components/banner/Banner';
-import Experience from '../components/experiences/Experience';
-import Skills from '../components/skills/Skills';
-import Project from '../components/projects/Project';
-import Clients from '../components/clients/Clients';
-import Contact from '../components/contacts/Contact';
-import Layout from '../components/layout/Layout';
+import Banner from '../components/Banner';
+import Experience from '../components/Experience';
+import Skills from '../components/Skills';
+import Project from '../components/Project';
+import Contact from '../components/Contact';
+
+import Header from '../components/layout/Header';
+import Hnadle from '../components/Handle';
 
 function HomePage() {
   return (
     <Fragment>
-      <Layout />
+      <Header />
       <Banner />
       <Experience />
       <Skills />
       <Project />
-      <Clients />
       <Contact />
+      <Hnadle
+        ralative="relative"
+        name="fixed"
+        bottom="0"
+        top="20rem"
+        left="1rem"
+        block="block"
+        // trans=" translateX(-50%)"
+      />
     </Fragment>
   );
 }

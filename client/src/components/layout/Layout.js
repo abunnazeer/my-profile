@@ -5,7 +5,7 @@ function Layout() {
   return (
     <Fragment>
       <Header />
-      <MobileHeader />
+      {/* <MobileHeader /> */}
     </Fragment>
   );
 }

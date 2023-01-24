@@ -1,0 +1,12 @@
+@import '../../sass/variable';
+
+.footer {
+  background-color: $green-color;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  h1 {
+    color: $white-color;
+    font-size: 1.5rem;
+  }
+}

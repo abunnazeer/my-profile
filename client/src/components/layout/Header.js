@@ -1,48 +1,38 @@
-import { React, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import LoginFrom from '../../administration/LoginForm';
+import styles from './header.module.scss';
 
-function Header() {
-  const [showLogin, setLogin] = useState(true);
-  const value = '123456';
-  const handleValidation = () => {
-    const val = window.prompt();
-    if (value === val) {
-      console.log('login');
-    }
-  };
+const Header = () => {
   return (
-    <nav className="header-container">
-      <div className="header">
-        <div className="brand">
-          <Link to="/">
-            <img src="./../assets/logo.png" alt="logo" srcSet="" />
-          </Link>
-        </div>
-        <LoginFrom setLogin={showLogin} />
-        <div className="menu">
-          <ul className="links">
-            <li>
-              <NavLink to="/showcase">Project</NavLink>
-            </li>
-            <li>
-              <NavLink to="/resources">resources</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about-me">About Me</NavLink>
-            </li>
-          </ul>
-        </div>
-        <Link
-          className="custom-btn lets-talk"
-          to="settings"
-          onClick={handleValidation}
-        >
+    <nav className={styles.header}>
+      <div className={styles.display__flex}>
+        <a href="/" className={styles.rm_hover}>
+          <img src="./../assets/logo.png" alt="logo" srcSet="" />
+        </a>
+
+        <ul className={styles.links}>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+        </ul>
+
+        <a className={styles.btn} href="#contact">
+          CONTACT
+        </a>
+        {/* <a className="custom-btn lets-talk" href="settings">
           LOGIN
-        </Link>
+        </a> */}
       </div>
     </nav>
   );
-}
+};
 
 export default Header;

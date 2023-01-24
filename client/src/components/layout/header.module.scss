@@ -1,0 +1,63 @@
+/* desktop heaer hide here */
+@import '../../sass/variable';
+.header {
+  border-bottom: 0.4rem solid $green-color;
+  text-align: center;
+  position: sticky;
+  background-color: $white-color;
+  top: 0;
+  z-index: 99999;
+  padding: 1rem 0;
+
+  .display__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+  }
+  img {
+    height: 4rem;
+  }
+  .rm_hover:hover {
+    border-bottom: none !important;
+    padding-bottom: 0px !important;
+  }
+  li {
+    display: inline;
+    margin: 0 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+  }
+  a {
+    text-decoration: none;
+    color: $black-color;
+    transition: 0.5s ease;
+    &:hover {
+      color: $green-color;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.2rem solid $green-color;
+    }
+    &:active {
+      color: $green-color;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.2rem solid $green-color;
+    }
+  }
+}
+
+.btn {
+  background-color: $green-color;
+  color: $white-color !important;
+  margin: auto 0;
+  border-radius: 0.4rem;
+  font-weight: normal;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  transition: 0.5s ease;
+  &:hover {
+    background-color: $green-color-dark;
+    padding: 1rem 1.5rem !important;
+    border-bottom: none !important;
+  }
+}
