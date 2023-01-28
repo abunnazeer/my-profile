@@ -7,6 +7,7 @@ import Contact from '../components/Contact';
 
 import Header from '../components/layout/Header';
 import Hnadle from '../components/Handle';
+import MobileMenu from '../components/layout/MobileMenu';
 
 function HomePage() {
   return (
@@ -26,6 +27,7 @@ function HomePage() {
         block="block"
         // trans=" translateX(-50%)"
       />
+      <MobileMenu />
     </Fragment>
   );
 }

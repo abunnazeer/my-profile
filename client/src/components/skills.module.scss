@@ -1,3 +1,4 @@
+@import '../sass/mixins';
 @import '../sass/variable';
 .skills {
   padding: 5rem 0;
@@ -7,6 +8,11 @@
     margin: 1rem 6rem 0;
     text-align: left;
     text-transform: uppercase;
+    @include responsive(phone) {
+      font-size: 1.1rem;
+
+      text-align: center;
+    }
   }
 }
 
@@ -19,6 +25,13 @@
   padding-top: 4rem;
   width: 50%;
   margin-left: 4rem;
+  @include responsive(phone) {
+    grid-template-columns: auto auto auto;
+    margin-left: 0rem;
+    width: 100%;
+    gap: 1rem;
+    justify-content: space-evenly;
+  }
 }
 
 .skills__card {
@@ -27,10 +40,17 @@
     padding: 0.5rem;
     border-radius: 10rem;
     height: 8rem;
+    @include responsive(phone) {
+      height: 5rem;
+    }
   }
   h3 {
     text-align: left;
     font-size: 2rem;
     font-weight: normal;
+    @include responsive(phone) {
+      font-size: 1.1rem;
+      text-align: center;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import Layout from '../../components/layout/Layout';
+// import Layout from '../../components/layout/Layout';
 import aboutStyles from './about.module.css';
 import AboutCard from './AboutCard';
 import ExperienceCard from './ExperienceCard';
@@ -18,7 +18,7 @@ const About = () => {
   const [gal, setGal] = useState(false);
   return (
     <Fragment>
-      <Layout />
+      {/* <Layout /> */}
       <section className={aboutStyles.main__section}>
         <div className={aboutStyles.space__out}></div>
         <div

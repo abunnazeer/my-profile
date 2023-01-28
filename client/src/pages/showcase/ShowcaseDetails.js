@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Fragment, useEffect, useState } from 'react';
-import Layout from '../../components/layout/Layout';
+// import Layout from '../../components/layout/Layout';
 import detailStyles from './showcaseDetails.module.css';
 const URL = 'http://localhost:8000/projects/';
 function ProjectDetails() {
@@ -22,7 +22,7 @@ function ProjectDetails() {
 
   return (
     <Fragment>
-      <Layout />
+      {/* <Layout /> */}
 
       <section className={detailStyles.main__container}>
         <div className={detailStyles.img__container}>

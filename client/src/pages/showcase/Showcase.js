@@ -1,11 +1,11 @@
-import Layout from '../../components/layout/Layout';
+// import Layout from '../../components/layout/Layout';
 import { Fragment } from 'react';
 import showcaseStyles from './showcase.module.css';
 
 const Showcase = () => {
   return (
     <Fragment>
-      <Layout />
+      {/* <Layout /> */}
       <section className={showcaseStyles.project__container}>
         <div className={showcaseStyles.latest__projects}>
           <div className={showcaseStyles.main__container}>

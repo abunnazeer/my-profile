@@ -1,0 +1,85 @@
+@import 'sass/mixins';
+@import 'sass/variable';
+
+/* reset  */
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 65.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $white-color;
+}
+body {
+  font-family: 'LATO' Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+// GLOBAL STYLES
+
+.btn {
+  background-color: $green-color;
+  color: $white-color !important;
+  margin: auto 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: normal;
+  padding: 1.5rem 1.5rem;
+  font-size: 1.2rem;
+  border: none;
+
+  cursor: pointer;
+}
+
+.btn__black {
+  width: 12rem;
+  background-color: $white-color;
+  color: $black-color !important;
+  border: 0.1rem solid $black-color;
+  transition: all 1s ease;
+  @include responsive(phone) {
+    width: 10rem;
+    height: 4rem;
+    padding: 1rem 1rem;
+  }
+  &:hover {
+    background-color: $black-color;
+    padding: 1.3rem 1.5rem !important;
+    border-bottom: none !important;
+    color: $white-color !important;
+  }
+}
+
+.btn__white {
+  color: $white-color !important;
+  border: 0.1rem solid $green-color;
+  transition: all 1s ease;
+  @include responsive(phone) {
+    width: 11rem;
+    height: 4rem;
+    padding: 1rem 0rem;
+  }
+  &:hover {
+    background-color: $white-color;
+    padding: 1.3rem 1.5rem !important;
+    border-bottom: none !important;
+    color: $black-color !important;
+    @include responsive(phone) {
+      padding: 1rem 0rem !important;
+    }
+  }
+}
+
+.icon__styles {
+  margin-right: 0.5rem;
+  color: $black-color-200 !important ;
+}

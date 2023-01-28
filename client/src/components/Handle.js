@@ -34,7 +34,7 @@ const Hnadle = props => {
         rel="noopener noreferrer"
       >
         <i
-          class={`fa-brands fa-github  ${styles.icon}`}
+          className={`fa-brands fa-github  ${styles.icon}`}
           style={{ display: props.block }}
         ></i>
       </a>

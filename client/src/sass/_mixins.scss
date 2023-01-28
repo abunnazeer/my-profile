@@ -1,0 +1,28 @@
+// @mixin phone {
+//   @media (max-width: 30rem) {
+//     @content;
+//   }
+// }
+
+@mixin responsive($bp) {
+  @if $bp == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $bp == tab_port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $bp == tab_land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $bp == desktop {
+    @media (min-width: 75em) {
+      @content;
+    }
+  }
+}

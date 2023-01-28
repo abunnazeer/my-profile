@@ -1,3 +1,4 @@
+@import '../sass/mixins';
 @import '../sass/variable';
 
 .about__me {
@@ -13,6 +14,9 @@
   font-size: 1.5rem;
   line-height: 2.1rem;
   font-style: italic;
+  @include responsive(phone) {
+    width: 90%;
+  }
 }
 
 .title {
@@ -20,6 +24,9 @@
   margin: 1rem 0;
   text-align: center;
   text-transform: uppercase;
+  @include responsive(phone) {
+    font-size: 1.4rem;
+  }
 }
 
 .experience {
@@ -33,6 +40,12 @@
   width: 50%;
   font-size: 1.5rem;
   margin: auto;
+  @include responsive(phone) {
+    width: 90%;
+    left: 0rem;
+    gap: 1rem;
+    font-size: 1.1rem;
+  }
 }
 
 .duration {

@@ -1,5 +1,6 @@
 /* desktop heaer hide here */
 @import '../../sass/variable';
+@import '../../sass/mixins';
 .header {
   border-bottom: 0.4rem solid $green-color;
   text-align: center;
@@ -16,8 +17,20 @@
     margin: auto;
     width: 90%;
   }
+  //mobile media query to increase the header height
+  @include responsive(phone) {
+    height: 7rem;
+  }
   img {
     height: 4rem;
+    //mobile media query tp center the logo in the mobile view
+    @include responsive(phone) {
+      position: absolute;
+      height: 5rem;
+      left: 50%;
+      top: 10%;
+      transform: translate(-50%, 10%);
+    }
   }
   .rm_hover:hover {
     border-bottom: none !important;
@@ -28,11 +41,16 @@
     margin: 0 1rem;
     text-transform: uppercase;
     font-size: 1.4rem;
+    //mobile media query to hide the menu list
+    @include responsive(phone) {
+      display: none;
+    }
   }
   a {
     text-decoration: none;
     color: $black-color;
     transition: 0.5s ease;
+
     &:hover {
       color: $green-color;
       padding-bottom: 0.5rem;
@@ -59,5 +77,9 @@
     background-color: $green-color-dark;
     padding: 1rem 1.5rem !important;
     border-bottom: none !important;
+  }
+  //mobile media query to hide contact btn
+  @include responsive(phone) {
+    display: none;
   }
 }

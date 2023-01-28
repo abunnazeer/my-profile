@@ -1,17 +1,28 @@
-import React from 'react';
-
-function MobileMenu() {
+import styles from './mobileMenu.module.scss';
+import { menu } from './Menu';
+const MobileMenu = () => {
+  const handleClick = e => {
+    e.preventDefault();
+    const target = e.target.getAttribute('href');
+    const element = document.querySelector(target).offsetTop;
+    window.scrollTo({ lef: 0, top: element - 68 });
+    console.log(e.target);
+  };
   return (
-    <footer className="mobile__bottom__menu">
-      <ul className="mobile__menu t__trans__upper">
-        <li className="list__item ">
-          <a href="/">
-            <i className="fa-solid fa-house mr__half"></i>
-            Home
-          </a>
-        </li>
+    <footer className={styles.mobile__nav}>
+      <ul>
+        {menu.map(item => {
+          return (
+            <li key={item.id}>
+              {item.icon}
+              <a href={item.url} onClick={handleClick}>
+                {item.name}
+              </a>
+            </li>
+          );
+        })}
 
-        <li className="list__item ">
+        {/* <li className="list__item ">
           <a href="#about">
             <i className="fa-solid fa-house mr__half"></i>
             About
@@ -37,10 +48,10 @@ function MobileMenu() {
             <i className="fa-sharp fa-solid fa-id-card mr__half"></i>
             Contact
           </a>
-        </li>
+        </li> */}
       </ul>
     </footer>
   );
-}
+};
 
 export default MobileMenu;

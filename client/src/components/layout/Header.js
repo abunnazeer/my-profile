@@ -1,6 +1,13 @@
 import styles from './header.module.scss';
+import { menu } from './Menu';
 
 const Header = () => {
+  const handleClick = e => {
+    e.preventDefault();
+    const target = e.target.getAttribute('href');
+    const element = document.querySelector(target).offsetTop;
+    window.scrollTo({ lef: 0, top: element - 68 });
+  };
   return (
     <nav className={styles.header}>
       <div className={styles.display__flex}>
@@ -9,27 +16,20 @@ const Header = () => {
         </a>
 
         <ul className={styles.links}>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
+          {menu.map(item => {
+            return (
+              <li key={item.id}>
+                <a href={item.url} onClick={handleClick}>
+                  {item.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
-        <a className={styles.btn} href="#contact">
+        <a className={styles.btn} href="#contact" onClick={handleClick}>
           CONTACT
         </a>
-        {/* <a className="custom-btn lets-talk" href="settings">
-          LOGIN
-        </a> */}
       </div>
     </nav>
   );

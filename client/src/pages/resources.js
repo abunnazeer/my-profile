@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
-import Layout from '../components/layout/Layout';
+// import Layout from '../components/layout/Layout';
 import resourcesStyles from './resources.module.css';
 
 const Resources = () => {
   return (
     <Fragment>
-      <Layout />
+      {/* <Layout /> */}
       <section className={resourcesStyles.main__section}>
         <div className={resourcesStyles.space__out}></div>
         <section className={resourcesStyles.about__me_flex}>
