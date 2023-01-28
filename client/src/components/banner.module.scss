@@ -10,11 +10,25 @@
     padding: 3rem 0;
     height: 25rem;
   }
+  @include responsive(tab_port) {
+    padding: 5rem 0;
+    height: 30rem;
+  }
+  button {
+    margin: 1rem 0.5rem;
+    padding: 1.3rem 0.5rem;
+  }
 }
 
 .title {
   font-size: 4rem;
   margin-bottom: 1rem;
+  @include responsive(tab_land) {
+    font-size: 3.5rem;
+  }
+  @include responsive(tab_port) {
+    font-size: 3.5rem;
+  }
   @include responsive(phone) {
     font-size: 3rem;
   }
@@ -24,7 +38,55 @@
   margin-bottom: 1rem;
   font-size: 2rem;
   line-height: 2.5rem;
+  @include responsive(tab_land) {
+    font-size: 1.5rem;
+  }
+  @include responsive(tab_port) {
+    font-size: 1.5rem;
+  }
   @include responsive(phone) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+.btn__primary {
+  color: $white-color !important;
+  border: 0.13rem solid $green-color;
+  color: $black-color !important;
+  border-radius: 0.4rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  @include responsive(phone) {
+    width: 12.5rem;
+  }
+  @include responsive(tab_port) {
+    width: 12.5rem;
+  }
+  @include responsive(tab_land) {
+    width: 12.5rem;
+  }
+  &:hover {
+    background-color: $green-color;
+    color: $white-color !important;
+    @include responsive(phone) {
+      // padding: 1rem 0rem !important;
+    }
+  }
+}
+
+.btn__secondary {
+  background-color: $green-color !important;
+  color: $white-color !important;
+  border: 0.13rem solid $green-color;
+  border-radius: 0.4rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  @include responsive(phone) {
+    width: 12.5rem;
+  }
+  &:hover {
+    background-color: $white-color !important;
+    color: $black-color !important;
+    border: 0.13rem solid $black-color !important;
   }
 }

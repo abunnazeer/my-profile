@@ -1,4 +1,5 @@
 @import '../../sass/variable';
+@import '../../sass/mixins';
 
 /* footer  section */
 .mobile__nav {
@@ -13,6 +14,18 @@
   cursor: pointer;
   margin-top: 2rem;
 
+  @include responsive(desktop) {
+    display: none;
+  }
+  @include responsive(tab_land) {
+    display: none;
+  }
+  @include responsive(tab_port) {
+    display: none;
+  }
+  @include responsive(phone) {
+    display: block;
+  }
   ul {
     display: flex;
     justify-content: space-evenly;

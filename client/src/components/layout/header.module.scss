@@ -9,7 +9,6 @@
   top: 0;
   z-index: 99999;
   padding: 1rem 0;
-
   .display__flex {
     display: flex;
     align-items: center;
@@ -17,13 +16,12 @@
     margin: auto;
     width: 90%;
   }
-  //mobile media query to increase the header height
+
   @include responsive(phone) {
     height: 7rem;
   }
   img {
     height: 4rem;
-    //mobile media query tp center the logo in the mobile view
     @include responsive(phone) {
       position: absolute;
       height: 5rem;
@@ -41,7 +39,6 @@
     margin: 0 1rem;
     text-transform: uppercase;
     font-size: 1.4rem;
-    //mobile media query to hide the menu list
     @include responsive(phone) {
       display: none;
     }

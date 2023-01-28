@@ -16,7 +16,7 @@ const Header = () => {
         </a>
 
         <ul className={styles.links}>
-          {menu.map(item => {
+          {menu.slice(0, 4).map(item => {
             return (
               <li key={item.id}>
                 <a href={item.url} onClick={handleClick}>
