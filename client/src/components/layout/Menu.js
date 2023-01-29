@@ -8,7 +8,7 @@ export const menu = [
   {
     id: 2,
     name: 'About',
-    icon: <i class="fa-solid fa-circle-info icon__styles"></i>,
+    icon: <i className="fa-solid fa-circle-info icon__styles"></i>,
     url: '#about',
   },
   {

@@ -11,7 +11,6 @@
 .intro {
   width: 50%;
   margin: 0 auto;
-
   font-size: 1.5rem;
   line-height: 2.1rem;
   font-style: italic;
@@ -51,8 +50,7 @@
   display: flex;
   justify-content: flex-start;
   gap: 4rem;
-  border-bottom: 0.1rem $black-color solid;
-  padding: 1.5rem 0;
+  border-bottom: 0.1rem $black-color-300 inset;
   width: 50%;
   font-size: 1.5rem;
   margin: auto;
@@ -60,19 +58,19 @@
     width: 50%;
     gap: 1rem;
     font-size: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
   }
   @include responsive(tab_land) {
     gap: 1rem;
     font-size: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
   }
   @include responsive(tab_port) {
     width: 100%;
     left: 0rem;
     gap: 1rem;
     font-size: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
   }
   @include responsive(phone) {
     width: 100%;

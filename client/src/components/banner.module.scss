@@ -53,23 +53,29 @@
 }
 
 .btn__primary {
+  display: inline-block;
+  margin: 0.4rem;
   color: $white-color !important;
   border: 0.13rem solid $green-color;
   color: $black-color !important;
   border-radius: 0.4rem;
+  padding: 1rem 0rem;
+  width: 11rem;
+  font-size: 1rem;
   transition: all 0.5s ease;
+
   cursor: pointer;
   @include responsive(desktop) {
-    width: 12.5rem;
+    // width: 12.5rem;
   }
   @include responsive(phone) {
-    width: 12.5rem;
+    // width: 12.5rem;
   }
   @include responsive(tab_port) {
-    width: 12.5rem;
+    // width: 12.5rem;
   }
   @include responsive(tab_land) {
-    width: 12.5rem;
+    // width: 12.5rem;
   }
   &:hover {
     background-color: $green-color;
@@ -81,14 +87,18 @@
 }
 
 .btn__secondary {
+  display: inline-block;
+  margin: 0.4rem;
   background-color: $green-color !important;
   color: $white-color !important;
   border: 0.13rem solid $green-color;
   border-radius: 0.4rem;
+  padding: 1rem 0rem;
   transition: all 0.5s ease;
+  width: 11rem;
+  font-size: 1rem;
   cursor: pointer;
   @include responsive(phone) {
-    width: 12.5rem;
   }
   &:hover {
     background-color: $white-color !important;

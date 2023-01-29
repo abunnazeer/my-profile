@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
-// import Card from './ProjectCard';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faGithub } from '@fortawesome/pro-solid-svg-icons';
 import styles from './project.module.scss';
-
+import { data } from '../components/data';
 const Url = 'http://localhost:8000';
 const Project = () => {
-  const [project, setProject] = useState([]);
-  const projectData = async url => {
-    const response = await fetch(url + '/projects');
-    const data = await response.json();
-    setProject(data);
-  };
-  useEffect(() => {
-    projectData(Url);
-  }, []);
+  // console.log(data.length);
+  // const [project, setProject] = useState([]);
+  // const projectData = async url => {
+  //   const response = await fetch(url + '/projects');
+  //   const data = await response.json();
+  //   setProject(data);
+  // };
+  // useEffect(() => {
+  //   projectData(Url);
+  // }, []);
   return (
     <section className={styles.projects} id="projects">
       <h1 className="title">Latest Projects</h1>
@@ -29,67 +27,22 @@ const Project = () => {
             />
           );
         })} */}
+        {data.map(item => {
+          return (
+            <div className={styles.card} key={item.id}>
+              <img src={item.imagepath} alt="logo" />
+              <h2>{item.title}</h2>
+              <p>{item.desc}</p>
 
-        <div className={styles.card}>
-          <img src="assets/img/projects/core-working.jpg" alt="logo" />
-          <h2>Core-working Space</h2>
-          <p>
-            is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been
-          </p>
-
-          <a href="#">
-            <i className={`fa-brands fa-github ${styles.icon}`}></i>
-          </a>
-          <a href="#">
-            <i className={`fa-sharp fa-solid fa-link ${styles.icon}`}></i>
-          </a>
-        </div>
-        <div className={styles.card}>
-          <img src="assets/img/projects/core-working.jpg" alt="logo" />
-          <h2>Core-working Space</h2>
-          <p>
-            is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been
-          </p>
-
-          <a href="#">
-            <i className={`fa-brands fa-github ${styles.icon}`}></i>
-          </a>
-          <a href="#">
-            <i className={`fa-sharp fa-solid fa-link ${styles.icon}`}></i>
-          </a>
-        </div>
-        <div className={styles.card}>
-          <img src="assets/img/projects/core-working.jpg" alt="logo" />
-          <h2>Core-working Space</h2>
-          <p>
-            is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been
-          </p>
-
-          <a href="#">
-            <i className={`fa-brands fa-github ${styles.icon}`}></i>
-          </a>
-          <a href="#">
-            <i className={`fa-sharp fa-solid fa-link ${styles.icon}`}></i>
-          </a>
-        </div>
-        <div className={styles.card}>
-          <img src="assets/img/projects/core-working.jpg" alt="logo" />
-          <h2>Core-working Space</h2>
-          <p>
-            is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been
-          </p>
-
-          <a href="#">
-            <i className={`fa-brands fa-github ${styles.icon}`}></i>
-          </a>
-          <a href="#">
-            <i className={`fa-sharp fa-solid fa-link ${styles.icon}`}></i>
-          </a>
-        </div>
+              <a href={item.github} target="_blank" rel="noopener noreferrer">
+                <i className={`fa-brands fa-github ${styles.icon}`}></i>
+              </a>
+              <a href={item.demo} target="_blank" rel="noopener noreferrer">
+                <i className={`fa-sharp fa-solid fa-link ${styles.icon}`}></i>
+              </a>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

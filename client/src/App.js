@@ -10,9 +10,7 @@ function App() {
   return (
     <Fragment>
       <HomePage />
-      <Routes>
-        <Route path="/*" element={<NoPage />} />
-      </Routes>
+      {/* <Routes><Route path="/*" element={<NoPage />} /></Routes> */}
     </Fragment>
   );
 }

@@ -9,8 +9,6 @@
   top: 0;
   z-index: 99999;
   padding: 1rem 0;
-  // font-family: 'Montserrat';
-  // font-weight: 600;
   .display__flex {
     display: flex;
     align-items: center;
@@ -20,13 +18,13 @@
   }
 
   @include responsive(phone) {
-    height: 7rem;
+    height: 6rem;
   }
   img {
     height: 4rem;
     @include responsive(phone) {
       position: absolute;
-      height: 5rem;
+      height: 4rem;
       left: 50%;
       top: 10%;
       transform: translate(-50%, 10%);
