@@ -42,8 +42,9 @@
       border-radius: 0.5rem;
     }
     @include responsive(phone) {
-      width: 30rem;
+      width: 28rem;
       border-radius: 0.5rem;
+      margin: 1rem auto;
     }
     &::placeholder {
       color: $black-color-100;
@@ -66,13 +67,19 @@
     color: $black-color-100;
     border: none;
     transition: all 0.5s ease-in-out;
-
+    @include responsive(desktop) {
+      border-radius: 0 2rem;
+    }
+    @include responsive(tab_land) {
+      border-radius: 0 2rem;
+    }
     @include responsive(tab_port) {
       border-radius: 0 2rem;
     }
     @include responsive(phone) {
-      width: 30rem;
+      width: 28rem;
       border-radius: 0 2rem;
+      margin: 1rem auto;
     }
 
     &::placeholder {
@@ -80,6 +87,9 @@
     }
     &:hover {
       box-shadow: 0 0 9px 3px #11a68385;
+    }
+    &:focus {
+      outline: none;
     }
   }
   button {

@@ -9,6 +9,8 @@
   top: 0;
   z-index: 99999;
   padding: 1rem 0;
+  // font-family: 'Montserrat';
+  // font-weight: 600;
   .display__flex {
     display: flex;
     align-items: center;
@@ -38,7 +40,10 @@
     display: inline;
     margin: 0 1rem;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    @include responsive(tab_port) {
+      font-size: 1.1rem;
+    }
     @include responsive(phone) {
       display: none;
     }

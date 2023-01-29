@@ -8,13 +8,13 @@ export const menu = [
   {
     id: 2,
     name: 'About',
-    icon: <i className="fa-solid fa-house icon__styles"></i>,
+    icon: <i class="fa-solid fa-circle-info icon__styles"></i>,
     url: '#about',
   },
   {
     id: 3,
     name: 'Skills',
-    icon: <i className="fa-solid fa-house icon__styles"></i>,
+    icon: <i className=" fa-solid fa-cog  icon__styles"></i>,
     url: '#skills',
   },
   {
