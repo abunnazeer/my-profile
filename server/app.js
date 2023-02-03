@@ -18,12 +18,20 @@ app.use(
 //app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public'));
-  //  console.log(res.sendFile(path.join(__dirname, 'public', 'index.html')));
+});
+
+app.get('/admin', (req, res) => {
+  res.render('settings');
+});
+
+app.get('/manage-projects', (req, res) => {
+  res.render('projects/index');
 });
 
 app.use('/projects', projectsRouter);
