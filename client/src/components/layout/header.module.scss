@@ -15,6 +15,9 @@
     justify-content: space-between;
     margin: auto;
     width: 90%;
+    ul {
+      flex: 1;
+    }
   }
 
   @include responsive(phone) {
@@ -34,6 +37,7 @@
     border-bottom: none !important;
     padding-bottom: 0px !important;
   }
+
   li {
     display: inline;
     margin: 0 1rem;
@@ -81,5 +85,27 @@
   //mobile media query to hide contact btn
   @include responsive(phone) {
     display: none;
+  }
+}
+
+.menu__login {
+  display: flex;
+  gap: 1rem;
+  i {
+    font-size: 4rem !important;
+    color: $green-color;
+    cursor: pointer;
+    &:hover {
+      color: $green-color-dark;
+    }
+  }
+  a {
+    &:hover {
+      padding: 0rem 0rem;
+      border-bottom: none !important;
+    }
+    @include responsive(phone) {
+      display: none;
+    }
   }
 }

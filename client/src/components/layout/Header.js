@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import styles from './header.module.scss';
 import { menu } from './Menu';
 
@@ -26,10 +27,14 @@ const Header = () => {
             );
           })}
         </ul>
-
-        <a className={styles.btn} href="#contact" onClick={handleClick}>
-          CONTACT
-        </a>
+        <div className={styles.menu__login}>
+          <a className={styles.btn} href="#contact" onClick={handleClick}>
+            CONTACT
+          </a>
+          <a href="settings">
+            <i class="fas fa-power-off"></i>
+          </a>
+        </div>
       </div>
     </nav>
   );

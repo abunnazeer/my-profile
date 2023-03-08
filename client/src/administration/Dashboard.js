@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import styles from './config.module.css';
 import { Link, NavLink } from 'react-router-dom';
 
-function Config() {
+function Dashboard() {
   return (
     <Fragment>
       <section className={styles.container}>
@@ -66,4 +66,4 @@ function Config() {
   );
 }
 
-export default Config;
+export default Dashboard;
