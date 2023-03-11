@@ -3,7 +3,7 @@ import ExperienceCard from './/ExperienceCard';
 import styles from './experience.module.scss';
 
 const Experience = () => {
-  const Url = 'http://localhost:8000';
+  const Url = 'https://abunnazeer.com.ng';
   const [experience, setExperience] = useState([]);
   async function experienceData(url) {
     const response = await fetch(url + '/experiences');

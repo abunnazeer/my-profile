@@ -3,7 +3,7 @@ import SkillsCard from './SkillsCard';
 import styles from './skills.module.scss';
 
 const Skills = () => {
-  const Url = 'http://localhost:8000';
+  const Url = 'https://abunnazeer.com.ng';
   const [skill, setSkill] = useState([]);
   const skillData = async url => {
     const response = await fetch(url + '/skills');
