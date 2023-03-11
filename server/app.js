@@ -11,7 +11,7 @@ const skillsRouter = require('./routes/skills/skills.router');
 const app = express();
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://abunnazeer.com.ng',
   })
 );
 

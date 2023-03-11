@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './project.module.scss';
 import { data } from '../components/data';
-const Url = 'http://localhost:8000';
+const Url = 'https://abunnazeer.com.ng';
 const Project = () => {
   // console.log(data.length);
   // const [project, setProject] = useState([]);

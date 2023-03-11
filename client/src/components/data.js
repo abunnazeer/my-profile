@@ -11,7 +11,7 @@ export const data = [
     id: 2,
     imagepath: 'assets/img/projects/evergreen.png',
     title: 'Ever Green Hospital',
-    desc: '    is simply dummy text of the printing and typesetting industry.Lorem',
+    desc: '    Ever green is a hospital management system that has a website include on it',
     demo: 'https://abunnazeer.com.ng/projects/frontend/evergreen-hospital/',
     github: 'https://github.com/abunnazeer/evergreen-hospital',
   },
